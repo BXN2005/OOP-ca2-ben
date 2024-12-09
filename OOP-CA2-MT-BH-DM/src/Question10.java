@@ -1,5 +1,8 @@
 import java.util.Stack;
-
+/**
+ * Name:ben hand
+ * Class Group:SD2B
+ */
 public class Question10 {
 
     enum DIRECTION {
