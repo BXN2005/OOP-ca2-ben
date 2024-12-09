@@ -24,7 +24,7 @@ public class Question10 {
         }
     }
 
-    public void solve(int startX, int startY, int exitX, int exitY, int[][] maze) {
+    public static void solve(int startX, int startY, int exitX, int exitY, int[][] maze) {
         Stack<Position> stack = new Stack<>();
         stack.push(new Position(startX, startY));
 
@@ -51,8 +51,8 @@ public class Question10 {
                 }
 
                 if (isValidMove(newX, newY, maze)) {
-                    // Mark as visited and move
-                    maze[newX][newY] = 2; // Mark the cell as visited
+
+                    maze[newX][newY] = 2;
                     stack.push(new Position(newX, newY));
                     moved = true;
                     break;
@@ -66,7 +66,7 @@ public class Question10 {
         System.out.println("No path found!");
     }
 
-    private boolean isValidMove(int x, int y, int[][] maze) {
+    private static boolean isValidMove(int x, int y, int[][] maze) {
         return x >= 0 && x < maze.length && y >= 0 && y < maze[0].length && maze[x][y] == 0;
     }
     public static void main(String[] args) {
@@ -81,8 +81,8 @@ public class Question10 {
         System.out.println("Maze:");
         display(maze);
 
-        Question10 solver = new Question10();
-        solver.solve(0, 0, 4, 4, maze);
+
+        solve(0, 0, 4, 4, maze);
 
         System.out.println("Maze after solving:");
         display(maze);
